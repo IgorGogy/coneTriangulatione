@@ -4,19 +4,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
-    public Main() {
-    }
-
-    @Override
-    public String toString() {
-        return "Main{}";
-    }
-
-
-    //comment
-
-
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
@@ -28,26 +15,15 @@ public class Main {
         int triangle = in.nextInt();
         System.out.printf("Радиус: %s  высота: %s сегментов: %s  \n", radius, height, triangle);
         in.close();
-        // inputX(triangle, radius);
-        // inputY(triangle, radius);
         outputPoints((inputX(triangle, radius)), (inputY(triangle, radius)), height);
     }
 
     private static void outputPoints(double[] inputX, double[] inputY, int height) {
         System.out.println("Координаты точек:");
         for (int i = 0; i < inputX.length; i++) {
-
-        //  System.out.println(String.format("P" + i + " " + "(" + "x= %.2f" + inputX[i] + "," + " " + "y= %.2f" + inputY[i] + ", " + "z=" + height + ")"));
-            System.out.println(String.format("x = %.2f" + "y = %.2f", inputX[i], inputY[i]));
-            //System.out.println(String.format("P%f", "x = %.2f", "y = %.2f", "z= %.2f",i, inputX[i], inputY[i], height));
- //         System.out.println(String.format("P" + i + " " + "(" + "x= " + inputX[i] + "," + " " + "y= %.2f" + inputY[i] + ", " + "z=" + height + ")"));
-
-        }
-
-//System.out.println(String.format("a = %d, b = %d, c = %d", a, b, c) );
-
+                   System.out.println(String.format("P%d: (" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) ", i, inputX[i], inputY[i], height));
+                 }
     }
-
 
     public static double[] inputX(int triangle, int radius) {
         double[] arrayX = new double[triangle];
@@ -55,7 +31,6 @@ public class Main {
             arrayX[i] = countX(triangle, radius, i);
         }
         return arrayX;
-
     }
 
     public static double[] inputY(int triangle, int radius) {
@@ -63,10 +38,8 @@ public class Main {
         for (int j = 0; j < triangle; j++) {
             arrayY[j] = countY(triangle, radius, j);
         }
-
         return arrayY;
     }
-
 
     public static double countX(int radius, int triangle, int i) {
         double x = 0;
@@ -79,6 +52,6 @@ public class Main {
         y = radius * Math.sin(2 * 3.14159265359 * i / triangle);
         return y;
     }
-};
+}
 
 
