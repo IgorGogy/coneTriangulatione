@@ -14,7 +14,6 @@ public class Main {
     }
 
 
-
     //comment
 
 
@@ -29,30 +28,57 @@ public class Main {
         int triangle = in.nextInt();
         System.out.printf("Радиус: %s  высота: %s сегментов: %s  \n", radius, height, triangle);
         in.close();
-        countX(radius, height, triangle);
-//        double x;
-//        for (int i=0; i<triangle-1; i++) {
-//        x=radius*Math.cos(2*3.14*i/triangle);
-//            System.out.println("координата Х: " + x);
-//        }
+        // inputX(triangle, radius);
+        // inputY(triangle, radius);
+        outputPoints((inputX(triangle, radius)), (inputY(triangle, radius)), height);
+    }
 
+    private static void outputPoints(double[] inputX, double[] inputY, int height) {
+        System.out.println("Координаты точек:");
+        for (int i = 0; i < inputX.length; i++) {
+
+        //  System.out.println(String.format("P" + i + " " + "(" + "x= %.2f" + inputX[i] + "," + " " + "y= %.2f" + inputY[i] + ", " + "z=" + height + ")"));
+            System.out.println(String.format("x = %.2f" + "y = %.2f", inputX[i], inputY[i]));
+            //System.out.println(String.format("P%f", "x = %.2f", "y = %.2f", "z= %.2f",i, inputX[i], inputY[i], height));
+ //         System.out.println(String.format("P" + i + " " + "(" + "x= " + inputX[i] + "," + " " + "y= %.2f" + inputY[i] + ", " + "z=" + height + ")"));
+
+        }
+
+//System.out.println(String.format("a = %d, b = %d, c = %d", a, b, c) );
 
     }
 
-    public static double countX(int radius, int height, int triangle) {
-        double x;
-//        for (int i=0; i<triangle-1; i++) {
-//        x=radius*Math.cos(2*3.14*i/triangle);
-//            System.out.println("координата Х: " + x);
-        //double degrees1 = 0.0;
-        //double radians1 = Math.toRadians(degrees1);
-        //    System.out.format("Синус %.1f градусов равен %.4f%n", radians1, Math.sin(radians1));
-        int t;
-        t=2;
-        System.out.format("Синус просто %.4f%n", Math.sin(1.6));
 
-        x = 0;
+    public static double[] inputX(int triangle, int radius) {
+        double[] arrayX = new double[triangle];
+        for (int i = 0; i < triangle; i++) {
+            arrayX[i] = countX(triangle, radius, i);
+        }
+        return arrayX;
+
+    }
+
+    public static double[] inputY(int triangle, int radius) {
+        double[] arrayY = new double[triangle];
+        for (int j = 0; j < triangle; j++) {
+            arrayY[j] = countY(triangle, radius, j);
+        }
+
+        return arrayY;
+    }
+
+
+    public static double countX(int radius, int triangle, int i) {
+        double x = 0;
+        x = radius * Math.cos(2 * 3.14159265359 * i / triangle);
         return x;
-    };
-}
+    }
+
+    public static double countY(int radius, int triangle, int i) {
+        double y = 0;
+        y = radius * Math.sin(2 * 3.14159265359 * i / triangle);
+        return y;
+    }
+};
+
 
