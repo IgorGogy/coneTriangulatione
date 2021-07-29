@@ -20,20 +20,16 @@ public class Main {
         System.out.println(3 > 1 ? "больше" : "меньше");
         outputPoints(inputX(triangle, radius), inputY(triangle, radius), inputZ(triangle, height)); }
     private static void outputPoints(double[] inputX, double[] inputY, int[] inputZ) {
-        System.out.println("Координаты точек треугольников:");
-        // System.out.println("Координаты точек:");
         for (int i = 0; i < inputX.length; i++) {
-         //   System.out.println(String.format("P%d: (" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) ", i, inputX[i], inputY[i], inputZ[i]));
-
-            System.out.println(String.format(
-                    "Треугольник%d:\n " +
+             System.out.println(String.format(
+                    "Координаты точек треугольника %d:\n" +
                             "P(i)(" + "x=%.2f;  " + "y=%.2f;  " + "z=%d), " +
                             "P(i+1)(" + "x=%.2f;  " + "y=%.2f;  " + "z=%d), " +
                             "A(" + "x=0;  y=0; " + "z=%d)",
-                    i,                                             // номер треугольника
-                    inputX[i], inputY[i], 0,               //координаты x; y; z; точки P(I)  inputZ[i]
-                    inputX[i+1], inputY[i+1], 0,               //координаты x; y; z; точки P(I+1)
-                    inputZ[i]));                                   //координаты x; y; z; точки A
+                    i+1,                                                            // номер треугольника
+                    inputX[i], inputY[i], 0,                                        //координаты x; y; z; точки P(I)  inputZ[i]
+                    i<9?inputX[i+1]:inputX[0], i<9?inputY[i+1]:inputY[0], 0,        //координаты x; y; z; точки P(I+1)
+                    inputZ[i]));                                                    //координаты x; y; z; точки A
         }
     }
 
