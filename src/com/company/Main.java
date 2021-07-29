@@ -21,7 +21,8 @@ public class Main {
     private static void outputPoints(double[] inputX, double[] inputY, int height) {
         System.out.println("Координаты точек:");
         for (int i = 0; i < inputX.length; i++) {
-                   System.out.println(String.format("P%d: (" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) ", i, inputX[i], inputY[i], height));
+System.out.println(String.format(
+ "Треугольник%d: (" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) ", i, inputX[i], inputY[i], height));
                  }
     }
 
@@ -41,13 +42,13 @@ public class Main {
         return arrayY;
     }
 
-    public static double countX(int radius, int triangle, int i) {
+    public static double countX(int triangle, int radius, int i) {
         double x = 0;
         x = radius * Math.cos(2 * 3.14159265359 * i / triangle);
         return x;
     }
 
-    public static double countY(int radius, int triangle, int i) {
+    public static double countY(int triangle, int radius, int i) {
         double y = 0;
         y = radius * Math.sin(2 * 3.14159265359 * i / triangle);
         return y;
