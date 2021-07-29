@@ -27,12 +27,12 @@ public class Main {
 
             System.out.println(String.format(
                     "Треугольник%d:\n " +
-                            "P(i)(" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) + " +
-                            "P(i+1)(" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) " +
-                            "A" + "x=0;  y=0;" + "z=%d",
+                            "P(i)(" + "x=%.2f;  " + "y=%.2f;  " + "z=%d), " +
+                            "P(i+1)(" + "x=%.2f;  " + "y=%.2f;  " + "z=%d), " +
+                            "A(" + "x=0;  y=0; " + "z=%d)",
                     i,                                             // номер треугольника
                     inputX[i], inputY[i], 0,               //координаты x; y; z; точки P(I)  inputZ[i]
-                    inputX[i], inputY[i], 0,               //координаты x; y; z; точки P(I+1)
+                    inputX[i+1], inputY[i+1], 0,               //координаты x; y; z; точки P(I+1)
                     inputZ[i]));                                   //координаты x; y; z; точки A
         }
     }
