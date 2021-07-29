@@ -17,16 +17,22 @@ public class Main {
         int triangle = in.nextInt();
         System.out.printf("Радиус: %s  высота: %s сегментов: %s  \n", radius, height, triangle);
         in.close();
-        outputPoints((inputX(triangle, radius)), (inputY(triangle, radius)), inputZ(triangle, height));
+        outputPoints(inputX(triangle, radius), inputY(triangle, radius), inputZ(triangle, height));
     }
 
     private static void outputPoints(double[] inputX, double[] inputY, int[] inputZ) {
         System.out.println("Координаты точек:");
         for (int i = 0; i < inputX.length; i++) {
-System.out.println(String.format(
- "P%d: (" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) ", i, inputX[i], inputY[3], inputZ[i])); }
+System.out.println(String.format( "P%d: (" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) ", i, inputX[i], inputY[i], inputZ[i]));
         System.out.println("Координаты точек треугольников:");
-//System.out.println(String.format("Треугольник%d: (" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) ", i,
+System.out.println(String.format(
+"Треугольник%d: " +
+        "P(i)(" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) + " +
+        "P(i+1)(" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) " +
+        "A" + " x=0;  y=0;" + "z=%d",
+        i, inputX[i], inputY[i], inputZ[i],
+        inputX[i], inputY[i], inputZ[i],
+        inputZ[i]));}
     }
 
     public static double[] inputX(int triangle, int radius) {
@@ -36,7 +42,6 @@ System.out.println(String.format(
         }
         return arrayX;
     }
-
     public static double[] inputY(int triangle, int radius) {
         double[] arrayY = new double[triangle];
         for (int j = 0; j < triangle; j++) {
@@ -51,7 +56,6 @@ System.out.println(String.format(
         }
         return arrayZ;
     }
-
     public static double countX(int triangle, int radius, int i) {
         double x = 0;
         x = radius * Math.cos(6.28318531 * i / triangle);
