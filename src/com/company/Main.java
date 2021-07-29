@@ -19,7 +19,7 @@ public class Main {
         in.close();
         outputPoints(inputX(triangle, radius), inputY(triangle, radius), inputZ(triangle, height)); }
     private static void outputPoints(double[] inputX, double[] inputY, int[] inputZ) {
-        int zziro = 0; //переменная для ввода координаты z для точек окружности(основания)
+        int zzero = 0; //переменная для ввода координаты z для точек окружности(основания)
         for (int i = 0; i < inputX.length; i++) {
              System.out.println(String.format(
                     "Координаты точек треугольника %d:\n" +
@@ -27,7 +27,7 @@ public class Main {
                             "P(i+1)(" + "x=%.2f;  " + "y=%.2f;  " + "z=%d), " +
                             "A(" + "x=0;  y=0; " + "z=%d)",
                     i+1,                                                            // номер треугольника
-                    inputX[i], inputY[i], zziro,                                        //координаты x; y; z; точки P(I)  inputZ[i]
+                    inputX[i], inputY[i], zzero,                                        //координаты x; y; z; точки P(I)  inputZ[i]
                     i<inputX.length-1?inputX[i+1]:inputX[0], i<inputX.length-1?inputY[i+1]:inputY[0], zziro, //координаты x; y; z; точки P(I+1). У последнего треугольника точка P(i+1) совпадает с точкой P(i) первого треугольника, поэтому чтобы java не ругалась на обращение к не существующему элементу массива, пришлось применть терналнальный оператор.
                     inputZ[i]));                                                    //координаты x; y; z; точки A
         }
