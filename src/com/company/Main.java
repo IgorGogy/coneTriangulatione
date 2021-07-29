@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Координаты точек:");
         for (int i = 0; i < inputX.length; i++) {
 System.out.println(String.format(
- "Треугольник%d: (" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) ", i, inputX[i], inputY[i], height));
+ "Треугольник %d: (" + "x=%.2f;  " + "y=%.2f;  " + "z=%d) ", i, inputX[i], inputY[i], height));
                  }
     }
 
