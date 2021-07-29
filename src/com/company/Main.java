@@ -59,13 +59,13 @@ public class Main {
 
     public static double countX(int triangle, int radius, int i) {
         double x = 0;
-        x = radius * Math.cos(6.28318531 * i / triangle);
+        x = radius * Math.cos(2*Math.PI * i / triangle);
         return x;
     }
 
     public static double countY(int triangle, int radius, int i) {
         double y = 0;
-        y = radius * Math.sin(6.28318531 * i / triangle);
+        y = radius * Math.sin(2*Math.PI * i / triangle);
         return y;
     }
 
