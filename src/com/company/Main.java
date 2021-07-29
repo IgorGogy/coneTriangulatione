@@ -15,9 +15,8 @@ public class Main {
         int height = in.nextInt();
         System.out.print("Введите количество треуголных сегментов конуса: ");
         int triangle = in.nextInt();
-        System.out.printf("Радиус: %s  высота: %s сегментов: %s  \n", radius, height, triangle);
+        System.out.printf("Радиус: %s  высота: %s сегментов(треугольников): %s  \n", radius, height, triangle);
         in.close();
-        System.out.println(3 > 1 ? "больше" : "меньше");
         outputPoints(inputX(triangle, radius), inputY(triangle, radius), inputZ(triangle, height)); }
     private static void outputPoints(double[] inputX, double[] inputY, int[] inputZ) {
         for (int i = 0; i < inputX.length; i++) {
@@ -28,7 +27,7 @@ public class Main {
                             "A(" + "x=0;  y=0; " + "z=%d)",
                     i+1,                                                            // номер треугольника
                     inputX[i], inputY[i], 0,                                        //координаты x; y; z; точки P(I)  inputZ[i]
-                    i<9?inputX[i+1]:inputX[0], i<9?inputY[i+1]:inputY[0], 0,        //координаты x; y; z; точки P(I+1)
+                    i<inputX.length-1?inputX[i+1]:inputX[0], i<inputX.length-1?inputY[i+1]:inputY[0], 0, //координаты x; y; z; точки P(I+1)
                     inputZ[i]));                                                    //координаты x; y; z; точки A
         }
     }
